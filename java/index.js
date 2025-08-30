@@ -23,31 +23,6 @@ function updateTime() {
     );
   }
 
-  //London
-  let londonElement = document.querySelector("#london");
-  if (londonElement) {
-    let londonDateElement = londonElement.querySelector(".date");
-    let londonTimeElement = londonElement.querySelector(".time");
-    let londonTime = moment().tz("Europe/London");
-    londonDateElement.innerHTML = moment().format("MMM Do YYYY");
-    londonTimeElement.innerHTML = londonTime.format(
-      "h:mm:ss [<small>]A[</small>]"
-    );
-  }
-}
-
-//Los Angeles
-let losAngelesElement = document.querySelector("#los-angeles");
-if (losAngelesElement) {
-  let losAngelesDateElement = losAngelesElement.querySelector(".date");
-  let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-  let losAngelesTime = moment().tz("America/Los_Angeles");
-  losAngelesDateElement.innerHTML = moment().format("MMM Do YYYY");
-  losAngelesTimeElement.innerHTML = losAngelesTime.format(
-    "h:mm:ss [<small>]A[</small>]"
-  );
-}
-
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   let cityName = cityTimeZone.replace(/_/g, " ").split("/")[1];
